@@ -20,14 +20,6 @@ export const usePortal = (hostName: string = 'root') => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const deregisterHost = useCallback(() => {
-    dispatch({
-      type: ACTIONS.DEREGISTER_HOST,
-      hostName: hostName,
-    });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
   const addUpdatePortal = useCallback((name: string, node: ReactNode) => {
     dispatch({
       type: ACTIONS.ADD_UPDATE_PORTAL,
@@ -50,7 +42,6 @@ export const usePortal = (hostName: string = 'root') => {
 
   return {
     registerHost,
-    deregisterHost,
     addPortal: addUpdatePortal,
     updatePortal: addUpdatePortal,
     removePortal,

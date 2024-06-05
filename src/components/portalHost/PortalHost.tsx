@@ -6,15 +6,12 @@ import type { PortalHostProps } from './types';
 const PortalHostComponent = ({ name }: PortalHostProps) => {
   //#region hooks
   const state = usePortalState(name);
-  const { registerHost, deregisterHost } = usePortal(name);
+  const { registerHost } = usePortal(name);
   //#endregion
 
   //#region effects
   useEffect(() => {
     registerHost();
-    return () => {
-      deregisterHost();
-    };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   //#endregion

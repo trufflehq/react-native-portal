@@ -17,14 +17,6 @@ const registerHost = (
   return state;
 };
 
-const deregisterHost = (
-  state: Record<string, Array<PortalType>>,
-  hostName: string
-) => {
-  delete state[hostName];
-  return state;
-};
-
 const addUpdatePortal = (
   state: Record<string, Array<PortalType>>,
   hostName: string,
@@ -78,8 +70,6 @@ export const reducer = (
   switch (type) {
     case ACTIONS.REGISTER_HOST:
       return registerHost(clonedState, action.hostName);
-    case ACTIONS.DEREGISTER_HOST:
-      return deregisterHost(clonedState, action.hostName);
     case ACTIONS.ADD_UPDATE_PORTAL:
       return addUpdatePortal(
         clonedState,

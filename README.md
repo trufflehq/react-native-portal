@@ -199,15 +199,6 @@ type usePortal = (hostName: string = 'root') => {
    * Register a new host.
    */
   registerHost: () => void;
-  /**
-   * Deregister a host.
-   */
-  deregisterHost: () => void;
-  /**
-   * Add portal to the host container.
-   * @param name portal name or key
-   * @param node portal content
-   */
   addPortal: (name: string, node: ReactNode) => void;
   /**
    * Update portal content.
